@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,700;1,300;1,700&display=swap');
+
+/* fonts
+
+font-family: 'Bitter', serif;
+
+
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Bitter', serif;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+i {
+    font-size: 2rem;
+}
+
+/*============
+ typography
+ =============*/
+
+ h1 {
+   font-size: 2rem;
+   color: white;
+ }
+
+ nav {
+   color: white;
+   background-color: rgb(37, 37, 37);
+ }
+
+ nav a {
+   color: white;
+ }
+
+ nav a:hover,
+ nav a:focus {
+  color: paleturquoise;
+ }
+
+ code {
+   background-color: turquoise;
+   padding: .125em .5em;
+ }
+
+ #title-span {
+  color: turquoise;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ }
+
+/*============
+layout 
+==============*/
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-areas: 
+  "navbar navbar navbar navbar"
+  "main main main main";
+}
+
+#navbar {
+  grid-area: navbar;
+  display: flex;
+  justify-content: space-between;
+}
+
+#navbar ul {
+  list-style: none;
+  order: -1;
+  padding: 0;
+}
+
+#navbar li {
+  margin: .5em;
+}
+
+#main-doc {
+  grid-area: main;
+  width: 95%;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* flip-box */
+
+.flip-box {
+    background-color: transparent;
+    width: 200px;
+    height: 100%;
+    perspective: 1000px; /*Remove this if you don't want the 3D effect*/
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+    cursor: pointer;
+  }
+  
+  /* Position the front and back side */
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side */
+  .flip-box-front {
+    background-color: transparent;
+    color: black;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Style the back side */
+  .flip-box-back {
+    background-color: turquoise;
+    color: black;
+    transform: rotateY(180deg);
+    justify-content: center;
+    align-items: center;
+  }
+
+@media (min-width: 1300px) {
+  body {
+    grid-template-areas: 
+    "navbar main main main ";
+  }
+
+  #navbar {
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  #navbar ul {
+    order: 0;
+  }
+
+  #main-doc {
+    grid-area: main;
+    width: 95%;
+    max-width: 800px;
+    margin: 1em;
+    padding-right: 2em;
+    border-right: solid turquoise;
+  }
+
+  .flip-box {
+    width: 100%;
+    height: 100px;
+  }
+}
+
+

@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&family=Paytone+One&display=swap');
+
+/* fonts
+font-family: 'Jaldi', sans-serif;
+font-family: 'Paytone One', sans-serif;
+ */
+
+/* colors */
+:root {
+  --darkgreen: rgb(31, 61, 31);
+  --lightgray: rgb(227, 226, 250);
+  --darkgray: rgb(53, 53, 53);
+  --lightgreen: rgb(161, 255, 73);
+  --blue: rgb(106, 201, 245);
+}
+
+body {
+  font-family: 'Jaldi', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--lightgray);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===========
+typography
+============== */
+
+header {
+  text-align: center;
+  font-family: 'Paytone One', sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 5px 0px 5px black, 0 0 25px var(--blue);
+}
+
+h2 {
+  font-weight: 700;
+}
+
+header ul,
+header li, 
+header a {
+  color: white;
+  list-style: none;
+  padding: 0;
+  text-decoration: none;
+  margin: 0;
+  font-size: 1.75rem;
+  transition: 0.2s;
+  transition-timing-function: ease-in;
+}
+
+header li {
+  padding-bottom: 0.5em;
+}
+
+header a:hover,
+header a:focus {
+  text-shadow: 5px 0px 5px black, 0 0 25px var(--blue);
+  transition: 0.2s;
+  transition-timing-function: ease-in;
+}
+
+/* ===========
+layout
+============== */
+
+h1 {
+  align-self: center;
+}
+
+header {
+  width: 100%;
+  background: var(--blue);
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+}
+
+#navbar ul {
+  display: flex;
+  width: 95%;
+  margin: auto;
+  max-width: 1200px;
+  justify-content: space-between;
+}
+
+#navbar li {
+  padding: 0;
+  margin: .5em;
+}
+
+#profile {
+  align-self: center;
+}
+
+.container {
+  width: 95%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* welcome section */
+
+#welcome-section {
+  height: 100vh;
+  display: grid;
+}
+
+/* projects section */
+
+#projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1em;
+  margin: 1em 0;
+}
+
+.project-tile {
+  padding: 1em;
+  border: 8px solid var(--darkgray);
+  transition: 0.2s;
+  transition-timing-function: ease-in;
+}
+
+.project-tile:hover {
+  background-color: var(--blue);
+  transition: 0.2s;
+  transition-timing-function: ease-in;
+}
+
+h2 {
+  padding: 0 1em;
+  text-indent: -1em;
+}
+
+@media (max-width: 700px) {
+  #navbar a {
+    font-size: 1rem;
+    transition: 1s;
+    transition-timing-function: ease-in;
+  }
+}
